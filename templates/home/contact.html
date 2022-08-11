@@ -1,0 +1,37 @@
+<div class="modal fade" id="contactModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Formularz Kontaktowy</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="post" class="was-validated">
+            {% csrf_token %}
+            <!-- Name input -->
+            <div class="form-outline mb-4">
+              <input name="subject" type="text" id="form4Example1" class="form-control" required />
+              <label class="form-label" for="form4Example1">Tytuł: </label>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input name="recipient_list" type="email" id="form4Example2" class="form-control" required />
+              <label class="form-label" for="form4Example2">E-mail: </label>
+            </div>
+
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+              <textarea name="message" class="form-control" id="form4Example3" rows="4" required></textarea>
+              <label class="form-label" for="form4Example3">Wiadomość: </label>
+            </div>
+
+            <!-- Checkbox -->
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Wyślij</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

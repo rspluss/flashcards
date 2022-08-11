@@ -1,0 +1,23 @@
+{% extends 'profiles/main.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <div class="card text-center">
+  <div class="card-header">Zaloguj się!</div>
+  <div class="card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_table }}
+                <p class="mt-3"><button class="btn btn-primary" type="submit">Zaloguj się!</button></p>
+            </form>
+  </div>
+  <div class="card-footer text-muted">Zapraszamy!</div>
+</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

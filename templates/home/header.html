@@ -1,0 +1,53 @@
+{% load static %}
+<header>
+  <!-- Intro settings -->
+  <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+  </style>
+
+  <!-- Navbar -->
+
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image mb-4 pt-5 mt-5"
+    style="background-image: url('{% static 'img/flashcards_header.jpg' %}');"
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.4);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Szybka nauka języka Angielskiego</h1>
+          <h5 class="mb-4">Fiszki online</h5>
+          <a data-mdb-toggle="modal" data-mdb-target="#registerModel"
+            class="btn btn-outline-light btn-lg m-2"
+            href=""
+            role="button"
+            rel="nofollow"
+            target="_blank"
+          >Zarejestruj się!</a
+          >
+          <a data-mdb-toggle="modal" data-mdb-target="#loginModel"
+            class="btn btn-outline-light btn-lg m-2"
+            href=""
+            target="_blank"
+            role="button"
+          >Zaloguj się!</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>

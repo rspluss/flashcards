@@ -1,0 +1,12 @@
+{% extends 'profiles/main.html' %}
+{% load static %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{% include 'profiles/profile.html' %}
+{% else %}
+{% include 'profiles/login_error.html' %}
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<div class="container pt-5 mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <div class="card text-center">
+  <div class="card-header">Informacja!</div>
+  <div class="card-body">
+    <h5 class="card-title">Sklep z fiszkami</h5>
+    <p class="card-text">Już wkrótce sklep będzie otwarty!</p>
+    <a href="{% url 'flashcards:home' %}" class="btn btn-primary">Wróć do strony głównej</a>
+  </div>
+  <div class="card-footer text-muted">Zapraszamy!</div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
