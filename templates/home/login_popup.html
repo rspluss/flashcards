@@ -6,7 +6,7 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST">
+          <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
   <!-- Email input -->
   <div class="form-outline mb-4">

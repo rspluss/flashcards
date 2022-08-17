@@ -6,38 +6,27 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="{% url 'profiles:register_user' %}" method="POST">
+            {% csrf_token %}
   <!-- 2 column grid layout with text inputs for the first and last names -->
   <div class="row mb-4">
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="form3Example1" class="form-control" />
-        <label class="form-label" for="form3Example1">Imię</label>
+        <input type="text" id="username" name="username" class="form-control" />
+        <label class="form-label" for="username">Użytkownik</label>
       </div>
     </div>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form3Example2" class="form-control" />
-        <label class="form-label" for="form3Example2">Nazwisko</label>
-      </div>
-    </div>
-  </div>
-
-  <!-- Email input -->
-  <div class="form-outline mb-4">
-    <input type="email" id="form3Example3" class="form-control" />
-    <label class="form-label" for="form3Example3">E-mail</label>
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form3Example4" class="form-control" />
-    <label class="form-label" for="form3Example4">Hasło</label>
+    <input type="password" id="password1" name="password1" class="form-control" />
+    <label class="form-label" for="password1">Hasło</label>
   </div>
 
   <div class="form-outline mb-4">
-    <input type="password" id="form3Example5" class="form-control" />
-    <label class="form-label" for="form3Example5">Powtórz hasło</label>
+    <input type="password" id="password2" name="password2" class="form-control" />
+    <label class="form-label" for="password2">Powtórz hasło</label>
   </div>
   <!-- Submit button -->
   <button type="submit" class="btn btn-primary btn-block mb-4">Zarejestruj się</button>

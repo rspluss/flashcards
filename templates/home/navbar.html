@@ -103,22 +103,19 @@
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuAvatar"
         >
+          {% if user.is_authenticated %}
           <li>
             <a class="dropdown-item" href="{% url 'profiles:index_profile' %}">My profile</a>
           </li>
           <li>
             <a class="dropdown-item" href="#">Settings</a>
           </li>
-          {% if user.is_authenticated %}
           <li>
             <a class="dropdown-item" href="{% url 'logout' %}">Wyloguj się!</a>
           </li>
           {% else %}
           <li>
             <a data-mdb-toggle="modal" data-mdb-target="#loginModel" class="dropdown-item" href="#">Zaloguj się</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="{% url 'login' %}">Zaloguj - stare</a>
           </li>
           <li>
             <a data-mdb-toggle="modal" data-mdb-target="#registerModel" class="dropdown-item" href="#">Zarejestruj się</a>

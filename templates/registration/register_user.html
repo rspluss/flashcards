@@ -1,0 +1,31 @@
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<section id="two" class="pricing-table d-flex align-items-center peach-gradient mt-5 pt-5">
+
+  <div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <div class="card text-center">
+  <div class="card-header">Zarejestruj się!</div>
+  <div class="card-body text-start">
+            <form action="{% url 'profiles:register_user' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <p class="mt-3"><button class="btn btn-primary" type="submit">Zarejestruj się!</button></p>
+            </form>
+  </div>
+  <div class="card-footer text-muted">Zapraszamy!</div>
+</div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+
+{% endblock %}
+
