@@ -2,6 +2,14 @@
 {% load static %}
 {% block content %}
 {% include 'home/header.html' %}
+{% for card in cards %}
+{{ card.name_pl }}
+{% endfor %}
+
+{% for category in categories %}
+{{ category.name }}
+{% endfor %}
+sdfa
 <div class="container">
     <div class="row align-items-center">
         <div class="col-md-5 text-end"><img src="{% static 'img/mobile-animation.png' %}" width="70%"></div>

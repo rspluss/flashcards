@@ -1,0 +1,41 @@
+{% extends 'profiles/main.html' %}
+{% load static %}
+
+{% block add_card_link %}
+<li class="breadcrumb-item"><a href="{% url 'profiles:add_card' %}">Dodaj Fiszkę</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="col-lg-8">
+  <h1>Dodaj Fiszkę</h1>
+  <div class="row">
+
+    <form method="POST">
+      {% csrf_token %}
+      {{ add_card_form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Dodaj fiszkę</button>
+    </form>
+
+
+    <h2 class="mt-5">Nowa wersja</h2>
+    <form>
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form1Example1" class="form-control" />
+    <label class="form-label" for="form1Example1">Polska wersja</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form1Example2" class="form-control" />
+    <label class="form-label" for="form1Example2">Angielska wersja</label>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block">Dodaj fiszkę</button>
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

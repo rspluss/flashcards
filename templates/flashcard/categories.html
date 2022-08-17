@@ -1,0 +1,30 @@
+{% load static %}
+<div class="col-lg-8">
+  <h1>Fiszki</h1>
+  <p>Wybierz kategorię fiszek</p>
+  <div class="row">
+    {% for category in categories %}
+  <div class="col-xl-4 col-lg-6 mb-4">
+    <div class="card">
+      <a href="category/{{ category.id }}">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <img
+            src="{% static 'img/logo_categories.jpg' %}"
+            alt=""
+            style="width: 45px; height: 45px"
+            class="rounded-circle"
+          />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">{{ category.name }}</p>
+            <p class="text-muted mb-0">{{ category.description }}</p>
+
+          </div>
+        </div>
+      </div>
+        </a>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+</div>
