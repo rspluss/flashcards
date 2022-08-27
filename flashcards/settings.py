@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "profiles.apps.ProfilesConfig",
     "flashcard.apps.FlashcardConfig",
     "tags.apps.TagsConfig",
+    "cards.apps.CardsConfig",
+    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [

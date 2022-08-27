@@ -13,3 +13,8 @@ class AddCardForm(forms.ModelForm):
             "name_eng": forms.TextInput(attrs={"class": "form-control"}),
             "category": forms.CheckboxInput(attrs={"class": "form-control"})
         }
+
+
+class CardCheckForm(forms.Form):
+    card_id = forms.IntegerField(required=True)
+    solved = forms.BooleanField(required=False)

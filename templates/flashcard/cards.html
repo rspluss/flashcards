@@ -10,18 +10,21 @@
 
   <div class="row">
   {% for c in category.flashcards.all %}
+    {% if not check_card %}
 
     <div class="col-xl-4 col-lg-6 mb-4">
       <div class="card text-white bg-success mb-3">
   <div class="card-header">{{ c.name_pl }}</div>
+    {% endif %}
   <div class="card-body">
-      <form method="GET">
-        <div class="form-outline">
-        <input type="text" name="ang_version" id="form12" class="form-control" />
-        <label class="form-label" for="form12">Angielska wersja:</label>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Sprawdź</button>
-      </form>
+    <details>
+      <summary class="btn btn-primary">Sprawdź</summary>
+        <hr>
+        <h5 class="card-title">{{ c.name_eng }}</h5>
+      </details>
+      <hr>
+      {% include 'flashcard/card_check_form.html' with solved=True %}
+      {% include 'flashcard/card_check_form.html' with solved=False %}
   </div>
 </div>
   </div>

@@ -1,5 +1,6 @@
 <!-- Navbar -->
 {% load static %}
+{% include 'home/message.html' %}
 {% include 'home/login_popup.html' %}
 {% include 'home/register_popup.html' %}
 {% include 'home/contact.html' %}
@@ -54,6 +55,7 @@
       </a>
 
       <!-- Notifications -->
+      {% if user.is_authenticated %}
       <div class="dropdown">
         <a
           class="text-reset me-3 dropdown-toggle hidden-arrow"
@@ -81,6 +83,7 @@
           </li>
         </ul>
       </div>
+      {% endif %}
       <!-- Avatar -->
       <div class="dropdown">
         <a

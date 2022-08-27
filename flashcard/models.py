@@ -16,3 +16,5 @@ class FlashCard(models.Model):
     name_eng = models.CharField(max_length=255, null=True, blank=True)
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="flashcards")
     tag = models.ManyToManyField("tags.Tag")
+
+
