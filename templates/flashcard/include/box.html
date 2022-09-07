@@ -1,0 +1,17 @@
+{% extends 'profiles/main.html' %}
+{% load humanize %}
+{% load static %}
+{% load cards_tags %}
+
+{% block content %}
+<div class="col-lg-8">
+  <div class="row">
+        {% boxes_as_links %}
+      <h2 class="mt-3">{{ box_number | ordinal }} Pudełko</h2>
+      <hr>
+      {% if check_card %}
+        {% include 'flashcard/include/card.html' with card=check_card %}
+      {% endif %}
+  </div>
+</div>
+{% endblock content %}

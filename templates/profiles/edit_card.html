@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block add_card_link %}
-<li class="breadcrumb-item"><a href="{% url 'profiles:add_card' %}">Dodaj Fiszkę</a></li>
+<li class="breadcrumb-item"><a href="{% url 'profiles:add_card' %}">Edytuj Fiszkę</a></li>
 {% endblock %}
 
 {% block content %}
 <div class="col-lg-8">
-  <h1>Dodaj Fiszkę</h1>
+  <h1>Edytuj Fiszkę</h1>
   <div class="row">
 
     <form method="POST">
       {% csrf_token %}
-      {{ add_card_f_form.as_p }}
-        <button type="submit" class="btn btn-primary btn-block">Dodaj fiszkę</button>
+      {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Edytuj fiszkę</button>
     </form>
     <h6 class="mt-3"><a href="{% url 'profiles:index_profile' %}"><< wróć</a></h6>
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from flashcard.models import Category, FlashCard
+from flashcard.models import Category, FlashCard, Card
 
 # Register your models here.
 
@@ -14,3 +14,8 @@ class CategoryAdmin(admin.ModelAdmin):
 class FlashCardAdmin(admin.ModelAdmin):
     list_display = ["id", "name_pl", "name_eng", "category"]
     list_filter = ["name_pl", "name_eng", "category"]
+
+
+@admin.register(Card)
+class CardAdmin(admin.ModelAdmin):
+    list_display = ["id", "question", 'answer', "box"]

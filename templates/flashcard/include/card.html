@@ -1,0 +1,34 @@
+{% load static %}
+{% load humanize %}
+<div class="row justify-content-center align-items-center">
+  <div class="col-xl-5 col-lg-5 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center">
+          <img
+            src="{% static 'img/logo_categories.jpg' %}"
+            alt=""
+            style="width: 45px; height: 45px"
+            class="rounded-circle"
+          />
+          <div class="ms-3 md-4">
+            <h2 class="fw-bold mb-1">{{ card.question }}</h2>
+            {% if not check_card %}
+            <h4 class="text-muted mb-0">{{ card.answer }}</h4>
+            {% else %}
+            <details>
+              <summary>Pokaż</summary>
+              <h4>{{ card.answer }}</h4>
+            </details>
+            <div class="mt-4">
+              {% include 'flashcard/card_check_form.html' with solved=True %}
+              {% include 'flashcard/card_check_form.html' with solved=False %}
+            </div>
+            {% endif %}
+            <a href="{% url 'profiles:edit_card' card.id %}">edytuj</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

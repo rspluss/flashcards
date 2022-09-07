@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "home.apps.HomeConfig",
     "profiles.apps.ProfilesConfig",
     "flashcard.apps.FlashcardConfig",
     "tags.apps.TagsConfig",
     "cards.apps.CardsConfig",
-    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [

@@ -3,8 +3,8 @@
     <input type="hidden" name="card_id" value="{{ card.id }}">
     <input type="hidden" name="solved" value="{{ solved }}">
      {% if solved %}
-        <button type="submit" class="btn-sm btn-light">Pamiętam</button>
+        <button type="submit" class="btn btn-light" data-mdb-ripple-color="dark">Pamiętam</button>
      {% else %}
-        <button type="submit" class="btn-sm btn-danger">Nie pamiętam</button>
+        <button type="submit" class="btn btn-dark">Nie pamiętam</button>
     {% endif %}
 </form>
