@@ -1,17 +1,100 @@
-{% extends 'profiles/main.html' %}
 {% load humanize %}
 {% load static %}
 {% load cards_tags %}
 
-{% block content %}
-<div class="col-lg-8">
-  <div class="row">
-        {% boxes_as_links %}
-      <h2 class="mt-3">{{ box_number | ordinal }} Pudełko</h2>
-      <hr>
-      {% if check_card %}
-        {% include 'flashcard/include/card.html' with card=check_card %}
-      {% endif %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flashcards</title>
+    <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+  rel="stylesheet"
+/>
+   <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-41M37ZZZF4');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+
+</head>
+<body>
+{% if messages %}
+  {% for message in messages %}
+      <div {% if message.tags %} class="alert alert-{{ message.tags }} pt-4 mt-5" {% endif %} role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        {{ message }}
+      </div>
+  {% endfor %}
+{% endif %}
+{% include 'profiles/navbar.html' %}
+
+{% if user.is_authenticated %}
+
+<section style="background-color: #eee;">
+  <div class="container pt-2 mt-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{% url 'profiles:index_profile' %}">Mój Profil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Uczymy się!</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+
+    {% block content %}
+    <div class="col-lg-12">
+      <div class="row">
+          {% boxes_as_links %}
+          <h2 class="mt-3">{{ box_number | ordinal }} Pudełko</h2>
+          <hr>
+          {% if check_card %}
+            {% include 'flashcard/include/card.html' with card=check_card %}
+          {% endif %}
+      </div>
+    </div>
+    {% endblock content %}
+
+
+    </div>
   </div>
-</div>
-{% endblock content %}
+</section>
+
+{% else %}
+{% include 'profiles/login_error.html' %}
+{% endif %}
+
+
+{% include 'profiles/footer.html' %}
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+></script>
+<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+
+</body>
+</html>
+
+

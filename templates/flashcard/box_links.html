@@ -1,7 +1,7 @@
 {% load humanize %}
 
 
-<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+<div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
 <!--  <div class="btn-group me-2" role="group" aria-label="First group">-->
 <!--    <a href="{% url 'profiles:index_profile' %}">-->
 <!--      <button type="button"  class="btn btn-primary">Wszystkie</button>-->
@@ -9,7 +9,7 @@
 <!--  </div>-->
 {% for box in boxes %}
   <div class="btn-group me-2" role="group" aria-label="First group">
-    <a class="btn text-white" style="background-color: #3b5998;" href="{% url 'profiles:box' box_num=box.number %}" role="button">
+    <a class="btn text-white m-1" style="background-color: #3b5998;" href="{% url 'profiles:box' box_num=box.number %}" role="button">
       {{ box.number }} Pudełko
       <span class="badge bg-danger ms-2">{{ box.card_count }}</span>
     </a>
